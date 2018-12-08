@@ -12,7 +12,8 @@ public class myLimeLight extends Subsystem {
     private LimeLight _limelight;
 
     public myLimeLight() {
-        _limelight = new LimeLight("limelight-vtwo");
+        _limelight = new LimeLight();
+        //_limelight = new LimeLight("limelight");
         _limelight.LimeLightInit(); 
     }
 

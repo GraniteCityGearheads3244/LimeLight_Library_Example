@@ -123,9 +123,17 @@ public class LimeLight {
      * 2 blink
      * @param ledMode
      */
-    public void setLEDMode(double ledMode){
-        m_table.getEntry("ledMode").setValue(ledMode);
+     public void setLEDMode(LedMode ledMode) {
+        m_table.getEntry("ledMode").setValue(ledMode.value);
     }
+
+    public double getLEDMode() {
+        NetworkTableEntry ledMode = m_table.getEntry("ledMode");
+        double led = ledMode.getDouble(0.0);
+        //To Do
+    return led;
+    }
+    
     /**
      * camMode  Sets limelight’s operation mode
      * 
@@ -135,7 +143,7 @@ public class LimeLight {
      */
     
     public void setCamMode(CamMode camMode) {
-        m_table.getEntry("camMode").setValue(camMode);
+        m_table.getEntry("camMode").setValue(camMode.value);
     }
     /**
      * pipeline Sets limelight’s current pipeline
@@ -225,6 +233,8 @@ public class LimeLight {
     double y = cyRaw.getDouble(0.0);
     return y;
     }
+
+	
 
     
 

@@ -13,6 +13,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.commands.MyGetLimeLightData;
+import frc.robot.commands.myLimeLightToggle_LED;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -62,6 +63,7 @@ public class OI {
 
         // SmartDashboard Buttonss
         SmartDashboard.putData("My Get LimeLight Data", new MyGetLimeLightData());
+        SmartDashboard.putData("LimeLight Toggle LED", new myLimeLightToggle_LED());
     }
 
     public Joystick getmyJoystick() {
