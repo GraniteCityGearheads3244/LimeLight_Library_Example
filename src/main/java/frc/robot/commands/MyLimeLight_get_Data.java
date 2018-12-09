@@ -81,15 +81,14 @@ public class MyLimeLight_get_Data extends InstantCommand {
 
         //getters of setters
         LedMode ledMode = Robot.mylimelight.getLimeLight().getLEDMode();
-        SmartDashboard.putNumber("LedMode",ledMode.getValue());
+        SmartDashboard.putString("LedMode",ledMode.toString());
         CamMode camMode = Robot.mylimelight.getLimeLight().getCamMode();
-        SmartDashboard.putNumber("CamMode",camMode.getValue());
+        SmartDashboard.putString("CamMode",camMode.toString());
         double pipeline = Robot.mylimelight.getLimeLight().getPipeline();
         SmartDashboard.putNumber("Pipeline",pipeline);
         StreamType stream = Robot.mylimelight.getLimeLight().getStream();
-        SmartDashboard.putNumber("stream",stream.getValue());
+        SmartDashboard.putString("stream",stream.toString());
         Snapshot snapShot = Robot.mylimelight.getLimeLight().getSnapshot();
-        SmartDashboard.putNumber("snapShot",snapShot.getValue());
         SmartDashboard.putString("snapShot key", snapShot.toString());
     }
 
