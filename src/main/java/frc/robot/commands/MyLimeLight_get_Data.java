@@ -6,16 +6,21 @@
 /*----------------------------------------------------------------------------*/
 
 package frc.robot.commands;
+
+import java.util.stream.Stream;
+
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
+import oi.limelightvision.limelight.frc.ControlMode.*;
+
 
 /**
  *
  */
-public class MyGetLimeLightData extends InstantCommand {
+public class MyLimeLight_get_Data extends InstantCommand {
 
-    public MyGetLimeLightData() {
+    public MyLimeLight_get_Data() {
         requires(Robot.mylimelight);
         setRunWhenDisabled(true);
     }
@@ -37,42 +42,55 @@ public class MyGetLimeLightData extends InstantCommand {
         SmartDashboard.putNumber("getSkew_Rotation",getSkew_Rotation);
         double getPipelineLatency = Robot.mylimelight.getLimeLight().getPipelineLatency();
         SmartDashboard.putNumber("getPipelineLatency",getPipelineLatency);
-        double Advanced_RotationToTarget0 = Robot.mylimelight.getLimeLight().Advanced_RotationToTarget(0);
+        double Advanced_RotationToTarget0 = Robot.mylimelight.getLimeLight().getAdvanced_RotationToTarget(Advanced_Target.kone);
         SmartDashboard.putNumber("Advanced_RotationToTarget0",Advanced_RotationToTarget0);
-        double Advanced_RotationToTarget1 = Robot.mylimelight.getLimeLight().Advanced_RotationToTarget(1);
+        double Advanced_RotationToTarget1 = Robot.mylimelight.getLimeLight().getAdvanced_RotationToTarget(Advanced_Target.ktwo);
         SmartDashboard.putNumber("Advanced_RotationToTarget1",Advanced_RotationToTarget1);
-        double Advanced_RotationToTarget2 = Robot.mylimelight.getLimeLight().Advanced_RotationToTarget(2);
+        double Advanced_RotationToTarget2 = Robot.mylimelight.getLimeLight().getAdvanced_RotationToTarget(Advanced_Target.kthree);
         SmartDashboard.putNumber("Advanced_RotationToTarget2",Advanced_RotationToTarget2);
-        double Advanced_degVerticalToTarget0 = Robot.mylimelight.getLimeLight().Advanced_degVerticalToTarget(0);
+        double Advanced_degVerticalToTarget0 = Robot.mylimelight.getLimeLight().getAdvanced_degVerticalToTarget(Advanced_Target.kone);
         SmartDashboard.putNumber("Advanced_degVerticalToTarget0",Advanced_degVerticalToTarget0);
-        double Advanced_degVerticalToTarget1 = Robot.mylimelight.getLimeLight().Advanced_degVerticalToTarget(1);
+        double Advanced_degVerticalToTarget1 = Robot.mylimelight.getLimeLight().getAdvanced_degVerticalToTarget(Advanced_Target.ktwo);
         SmartDashboard.putNumber("Advanced_degVerticalToTarget1",Advanced_degVerticalToTarget1);
-        double Advanced_degVerticalToTarget2 = Robot.mylimelight.getLimeLight().Advanced_degVerticalToTarget(2);
+        double Advanced_degVerticalToTarget2 = Robot.mylimelight.getLimeLight().getAdvanced_degVerticalToTarget(Advanced_Target.kthree);
         SmartDashboard.putNumber("Advanced_degVerticalToTarget2",Advanced_degVerticalToTarget2);
-        double Advanced_TargetArea0 = Robot.mylimelight.getLimeLight().Advanced_TargetArea(0);
+        double Advanced_TargetArea0 = Robot.mylimelight.getLimeLight().getAdvanced_TargetArea(Advanced_Target.kone);
         SmartDashboard.putNumber("Advanced_TargetArea0",Advanced_TargetArea0);
-        double Advanced_TargetArea1 = Robot.mylimelight.getLimeLight().Advanced_TargetArea(1);
+        double Advanced_TargetArea1 = Robot.mylimelight.getLimeLight().getAdvanced_TargetArea(Advanced_Target.ktwo);
         SmartDashboard.putNumber("Advanced_TargetArea1",Advanced_TargetArea1);
-        double Advanced_TargetArea2 = Robot.mylimelight.getLimeLight().Advanced_TargetArea(2);
+        double Advanced_TargetArea2 = Robot.mylimelight.getLimeLight().getAdvanced_TargetArea(Advanced_Target.kthree);
         SmartDashboard.putNumber("Advanced_TargetArea2",Advanced_TargetArea2);
-        double Advanced_Skew_Rotation0 = Robot.mylimelight.getLimeLight().Advanced_Skew_Rotation(0);
+        double Advanced_Skew_Rotation0 = Robot.mylimelight.getLimeLight().getAdvanced_Skew_Rotation(Advanced_Target.kone);
         SmartDashboard.putNumber("Advanced_Skew_Rotation0",Advanced_Skew_Rotation0);
-        double Advanced_Skew_Rotation1 = Robot.mylimelight.getLimeLight().Advanced_Skew_Rotation(1);
+        double Advanced_Skew_Rotation1 = Robot.mylimelight.getLimeLight().getAdvanced_Skew_Rotation(Advanced_Target.ktwo);
         SmartDashboard.putNumber("Advanced_Skew_Rotation1",Advanced_Skew_Rotation1);
-        double Advanced_Skew_Rotation2 = Robot.mylimelight.getLimeLight().Advanced_Skew_Rotation(2);
+        double Advanced_Skew_Rotation2 = Robot.mylimelight.getLimeLight().getAdvanced_Skew_Rotation(Advanced_Target.kthree);
         SmartDashboard.putNumber("Advanced_Skew_Rotation2",Advanced_Skew_Rotation2);
-        double[] Advanced_RawCrosshair0 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair(0);
+        double[] Advanced_RawCrosshair0 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair(Advanced_Crosshair.kone);
         SmartDashboard.putNumberArray("Advanced_RawCrosshair0",Advanced_RawCrosshair0);
-        double[] Advanced_RawCrosshair1 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair(1);
+        double[] Advanced_RawCrosshair1 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair(Advanced_Crosshair.ktwo);
         SmartDashboard.putNumberArray("Advanced_RawCrosshair1",Advanced_RawCrosshair1);
-        double Advanced_RawCrosshair_X0 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair_X(0);
+        double Advanced_RawCrosshair_X0 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair_X(Advanced_Crosshair.kone);
         SmartDashboard.putNumber("Advanced_RawCrosshair_X0",Advanced_RawCrosshair_X0);
-        double Advanced_RawCrosshair_X1 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair_X(1);
+        double Advanced_RawCrosshair_X1 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair_X(Advanced_Crosshair.ktwo);
         SmartDashboard.putNumber("Advanced_RawCrosshair_X1",Advanced_RawCrosshair_X1);
-        double Advanced_RawCrosshair_Y0 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair_Y(0);
+        double Advanced_RawCrosshair_Y0 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair_Y(Advanced_Crosshair.kone);
         SmartDashboard.putNumber("Advanced_RawCrosshair_Y0",Advanced_RawCrosshair_Y0);
-        double Advanced_RawCrosshair_Y1 = Robot.mylimelight.getLimeLight().Advanced_RawCrosshair_Y(1);
+        double Advanced_RawCrosshair_Y1 = Robot.mylimelight.getLimeLight().getAdvanced_RawCrosshair_Y(Advanced_Crosshair.ktwo);
         SmartDashboard.putNumber("Advanced_RawCrosshair_Y1",Advanced_RawCrosshair_Y1);
+
+        //getters of setters
+        LedMode ledMode = Robot.mylimelight.getLimeLight().getLEDMode();
+        SmartDashboard.putNumber("LedMode",ledMode.getValue());
+        CamMode camMode = Robot.mylimelight.getLimeLight().getCamMode();
+        SmartDashboard.putNumber("CamMode",camMode.getValue());
+        double pipeline = Robot.mylimelight.getLimeLight().getPipeline();
+        SmartDashboard.putNumber("Pipeline",pipeline);
+        StreamType stream = Robot.mylimelight.getLimeLight().getStream();
+        SmartDashboard.putNumber("stream",stream.getValue());
+        Snapshot snapShot = Robot.mylimelight.getLimeLight().getSnapshot();
+        SmartDashboard.putNumber("snapShot",snapShot.getValue());
+        SmartDashboard.putString("snapShot key", snapShot.toString());
     }
 
 }

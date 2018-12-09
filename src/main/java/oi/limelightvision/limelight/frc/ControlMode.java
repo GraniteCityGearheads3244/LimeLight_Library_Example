@@ -73,22 +73,22 @@ public class ControlMode {
         }
     }
 
-    public enum Stream {
+    public enum StreamType {
         kStandard(0),
         kPiPMain(1),
         kPiPSecondary(2);
     
-        private static final Map<Double,  Stream> MY_MAP = new HashMap<Double,  Stream>();
+        private static final Map<Double,  StreamType> MY_MAP = new HashMap<Double,  StreamType>();
         
         static {
-            for ( Stream  Stream : values()) {
-            MY_MAP.put( Stream.getValue(),  Stream);
+            for ( StreamType  StreamType : values()) {
+            MY_MAP.put( StreamType.getValue(),  StreamType);
             }
         }
         
         private double value;
 
-        private  Stream(double value) {
+        private  StreamType(double value) {
             this.value = value;
         }
 
@@ -96,7 +96,7 @@ public class ControlMode {
             return value;
         }
 
-        public static  Stream getByValue(double value) {
+        public static  StreamType getByValue(double value) {
             return MY_MAP.get(value);
         }
 
@@ -106,9 +106,9 @@ public class ControlMode {
 
     }
 
-    enum  Snapshot {
+    public enum  Snapshot {
 
-        kon(0), koff(1);
+        kon(1), koff(0);
       
         private static final Map<Double,  Snapshot> MY_MAP = new HashMap<Double,  Snapshot>();
         
@@ -129,7 +129,6 @@ public class ControlMode {
         }
       
         public static  Snapshot getByValue(double value) {
-          System.out.println(MY_MAP.get(value));
           return MY_MAP.get(value);
         }
       
@@ -138,18 +137,68 @@ public class ControlMode {
         }
       
       }
+      
+      public enum  Advanced_Target {
 
-    /* public enum Stream {
-        kStandard(0),
-        kPiPMain(1),
-        kPiPSecondary(2);
-    
-        @SuppressWarnings("MemberName")
-        public final int value;
-    
-        Stream(int value) {
-            this.value = value;
+        kone(0), ktwo(1), kthree(2);
+      
+        private static final Map<Integer,  Advanced_Target> MY_MAP = new HashMap<Integer,  Advanced_Target>();
+        
+        static {
+          for ( Advanced_Target  Advanced_Target : values()) {
+            MY_MAP.put( Advanced_Target.getValue(),  Advanced_Target);
+          }
         }
-    } */
+        
+        private Integer value;
+      
+        private  Advanced_Target(Integer value) {
+          this.value = value;
+        }
+      
+        public Integer getValue() {
+          return value;
+        }
+      
+        public static  Advanced_Target getByValue(Integer value) {
+          return MY_MAP.get(value);
+        }
+      
+        public String toString() {
+          return name();
+        }
+      
+      }
     
+      public enum  Advanced_Crosshair {
+
+        kone(0), ktwo(1);
+      
+        private static final Map<Integer,  Advanced_Crosshair> MY_MAP = new HashMap<Integer,  Advanced_Crosshair>();
+        
+        static {
+          for ( Advanced_Crosshair  Advanced_Crosshair : values()) {
+            MY_MAP.put( Advanced_Crosshair.getValue(),  Advanced_Crosshair);
+          }
+        }
+        
+        private Integer value;
+      
+        private  Advanced_Crosshair(Integer value) {
+          this.value = value;
+        }
+      
+        public Integer getValue() {
+          return value;
+        }
+      
+        public static  Advanced_Crosshair getByValue(Integer value) {
+          return MY_MAP.get(value);
+        }
+      
+        public String toString() {
+          return name();
+        }
+      
+      }
 }

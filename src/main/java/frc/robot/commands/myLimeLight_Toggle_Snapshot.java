@@ -9,16 +9,16 @@ package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import frc.robot.Robot;
-import oi.limelightvision.limelight.frc.ControlMode.LedMode;
+import oi.limelightvision.limelight.frc.ControlMode.Snapshot;
 
 /**
  * Add your docs here.
  */
-public class myLimeLightToggle_LED extends InstantCommand {
+public class myLimeLight_Toggle_Snapshot extends InstantCommand {
   /**
    * Add your docs here.
    */
-  public myLimeLightToggle_LED() {
+  public myLimeLight_Toggle_Snapshot() {
     super();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
@@ -29,12 +29,11 @@ public class myLimeLightToggle_LED extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    if(Robot.mylimelight.getLimeLight().getLEDMode() == LedMode.kon){
-      Robot.mylimelight.getLimeLight().setLEDMode(LedMode.koff);
+    if(Robot.mylimelight.getLimeLight().getSnapshot() == Snapshot.kon){
+      Robot.mylimelight.getLimeLight().setSnapshot(Snapshot.koff);
     }else{
-      Robot.mylimelight.getLimeLight().setLEDMode(LedMode.kon);
+      Robot.mylimelight.getLimeLight().setSnapshot(Snapshot.kon);
     }
-    
   }
 
 }

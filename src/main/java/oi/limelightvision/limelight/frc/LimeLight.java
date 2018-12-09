@@ -199,14 +199,14 @@ public class LimeLight {
      * 
      * @param stream
      */ 
-    public void setStream(Stream stream) {
+    public void setStream(StreamType stream) {
         m_table.getEntry("stream").setValue(stream.getValue());
     }
 
-    public Stream getStream() {
+    public StreamType getStream() {
         NetworkTableEntry stream = m_table.getEntry("stream");
         double st = stream.getDouble(0.0);
-        Stream mode = Stream.getByValue(st);
+        StreamType mode = StreamType.getByValue(st);
         return mode;
     }
 
@@ -224,8 +224,8 @@ public class LimeLight {
 
     public Snapshot getSnapshot() {
         NetworkTableEntry snapshot = m_table.getEntry("snapshot");
-        double st = snapshot.getDouble(0.0);
-        Snapshot mode = Snapshot.getByValue(st);        
+        double snshot = snapshot.getDouble(0.0);
+        Snapshot mode = Snapshot.getByValue(snshot );        
         return mode;
     }
 
@@ -237,26 +237,26 @@ public class LimeLight {
      * in normalized screen space (-1 to 1) rather than degrees.	 * 
      */
 
-    public double Advanced_RotationToTarget(int raw) {
-        NetworkTableEntry txRaw = m_table.getEntry("tx" + Integer.toString(raw));
+    public double getAdvanced_RotationToTarget(Advanced_Target raw) {
+        NetworkTableEntry txRaw = m_table.getEntry("tx" + Integer.toString(raw.getValue()));
         double x = txRaw.getDouble(0.0);
         return x;
     }
 
-    public double Advanced_degVerticalToTarget(int raw) {
-        NetworkTableEntry tyRaw = m_table.getEntry("ty" + Integer.toString(raw));
+    public double getAdvanced_degVerticalToTarget(Advanced_Target raw) {
+        NetworkTableEntry tyRaw = m_table.getEntry("ty" + Integer.toString(raw.getValue()));
         double y = tyRaw.getDouble(0.0);
         return y;
     }
 
-    public double Advanced_TargetArea(int raw) {
-        NetworkTableEntry taRaw = m_table.getEntry("ta" + Integer.toString(raw));
+    public double getAdvanced_TargetArea(Advanced_Target raw) {
+        NetworkTableEntry taRaw = m_table.getEntry("ta" + Integer.toString(raw.getValue()));
         double a = taRaw.getDouble(0.0);
         return a;
     }
     
-    public double Advanced_Skew_Rotation(int raw) {
-        NetworkTableEntry tsRaw = m_table.getEntry("ts" + Integer.toString(raw));
+    public double getAdvanced_Skew_Rotation(Advanced_Target raw) {
+        NetworkTableEntry tsRaw = m_table.getEntry("ts" + Integer.toString(raw.getValue()));
         double s = tsRaw.getDouble(0.0);
         return s;
     }
@@ -264,20 +264,20 @@ public class LimeLight {
     //Raw Crosshairs:
     //If you are using raw targeting data, you can still utilize your calibrated crosshairs:
     
-    public double[] Advanced_RawCrosshair(int raw){
+    public double[] getAdvanced_RawCrosshair(Advanced_Crosshair raw){
         double[] crosshars = new double[2];
-        crosshars[0] = Advanced_RawCrosshair_X(raw);
-        crosshars[1] = Advanced_RawCrosshair_Y(raw);
+        crosshars[0] = getAdvanced_RawCrosshair_X(raw);
+        crosshars[1] = getAdvanced_RawCrosshair_Y(raw);
         return crosshars;
     }
-    public double Advanced_RawCrosshair_X(int raw) {
-        NetworkTableEntry cxRaw = m_table.getEntry("cx" + Integer.toString(raw));
+    public double getAdvanced_RawCrosshair_X(Advanced_Crosshair raw) {
+        NetworkTableEntry cxRaw = m_table.getEntry("cx" + Integer.toString(raw.getValue()));
         double x = cxRaw.getDouble(0.0);
         return x;
     }
 
-    public double Advanced_RawCrosshair_Y(int raw) {
-        NetworkTableEntry cyRaw = m_table.getEntry("cy" + Integer.toString(raw));
+    public double getAdvanced_RawCrosshair_Y(Advanced_Crosshair raw) {
+        NetworkTableEntry cyRaw = m_table.getEntry("cy" + Integer.toString(raw.getValue()));
         double y = cyRaw.getDouble(0.0);
         return y;
     }
