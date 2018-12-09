@@ -29,9 +29,7 @@ public class myLimeLightToggle_LED extends InstantCommand {
   // Called once when the command executes
   @Override
   protected void initialize() {
-    //System.out.println(Robot.mylimelight.getLimeLight().getLEDMode());
     if(Robot.mylimelight.getLimeLight().getLEDMode() == LedMode.kon){
-      System.out.println(Robot.mylimelight.getLimeLight().getLEDMode());
       Robot.mylimelight.getLimeLight().setLEDMode(LedMode.koff);
     }else{
       Robot.mylimelight.getLimeLight().setLEDMode(LedMode.kon);
