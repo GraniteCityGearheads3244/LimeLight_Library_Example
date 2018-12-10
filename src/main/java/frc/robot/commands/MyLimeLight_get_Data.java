@@ -7,8 +7,6 @@
 
 package frc.robot.commands;
 
-import java.util.stream.Stream;
-
 import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
