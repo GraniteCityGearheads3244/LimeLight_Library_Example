@@ -1,16 +1,29 @@
-# LimeLight_API_Example
+# LimeLight_Library_Example
 
-Java Files are ready. Copy the oi directory to your src/main/java folder.
+# Java Instructions
 
-# Construct your Lime Light like any other object
+## Manual Install
+* Copy the `oi.limelightvision.limelight.frc.LimeLight` package into your `src/main/java` folder.
 
-## Example
+## Usage
+Make a new instance of the driver, and use it however you like. For example:
+```java
+import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import oi.limelightvision.limelight.frc.LimeLight;
 
-private LimeLight _limelight;
 
-_limelight = new LimeLight();
+public class Robot extends IterativeRobot {
 
-_limelight = new LimeLight("NetworkTable Key");  //If you renamed your limelight ex: limelight-custome
+  public static final LimeLight _limelight = new LimeLight();
+  //public static final LimeLight _limelight = new LimeLight("NetworkTable Key");  //If you renamed your limelight ex: limelight-custome
+  
+  @Override
+  public void robotPeriodic() {
+    SmartDashboard.putBoolean("Target Found", _limelight.getIsTargetFound());
+    SmartDashboard.putNumber("Deg Rotation to Target", _limelight.getdegRotationToTarget());
+    //......
+  }
 
-_limelight = new LimeLight();
+}
+```
