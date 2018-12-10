@@ -6,7 +6,11 @@ Java Files are ready. Copy the oi directory to your src/main/java folder.
 
 ## Exsample
 import oi.limelightvision.limelight.frc.LimeLight;
+
 private LimeLight _limelight;
+
 _limelight = new LimeLight();
+
 _limelight = new LimeLight("NetworkTable Key");  //If you renamed your limelight ex: limelight-custome
+
 _limelight = new LimeLight();
