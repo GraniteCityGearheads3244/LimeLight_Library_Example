@@ -180,6 +180,24 @@ public class LimeLight {
         m_table.getEntry("pipeline").setValue(pipeline);
     }
 
+     /**
+     * pipeline Sets limelight’s current pipeline
+     * 
+     * 0 . 9	Select pipeline 0.9
+     * 
+     * @param pipeline
+     */
+    public void setPipeline(Integer pipeline) {
+        if(pipeline<0){
+            pipeline = 0;
+            throw new IllegalArgumentException("Pipeline can not be less than zero");
+        }else if(pipeline>9){
+            pipeline = 9;
+            throw new IllegalArgumentException("Pipeline can not be greater than nine");
+        }
+        m_table.getEntry("pipeline").setValue(pipeline);
+    }
+
     /**
      * Returns current Pipeling of the Lime Light
      * @return Pipelinge
@@ -187,6 +205,16 @@ public class LimeLight {
     public double getPipeline(){
         NetworkTableEntry pipeline = m_table.getEntry("pipeline");
         double pipe = pipeline.getDouble(0.0);
+        return pipe;
+    }
+
+    /**
+     * Returns current Pipeling of the Lime Light
+     * @return Pipelinge
+     */
+    public Integer getPipelineInt(){
+        NetworkTableEntry pipeline = m_table.getEntry("pipeline");
+        Integer pipe = (int) pipeline.getDouble(0.0);
         return pipe;
     }
 
