@@ -20,10 +20,19 @@ public class Robot extends IterativeRobot {
   
   @Override
   public void robotPeriodic() {
+    //Getters
     SmartDashboard.putBoolean("Target Found", _limelight.getIsTargetFound());
     SmartDashboard.putNumber("Deg Rotation to Target", _limelight.getdegRotationToTarget());
-    //......
+    //.....and MORE
+
+    //Setters
+    _limelight.setPipeline(1);
+    _limelight.setLEDMode(LedMode.koff);
+    _limelight.setCamMode(CamMode.kdriver);
+    _limelight.setSnapshot(Snapshot.kon);
+    _limelight.setStream(StreamType.kPiPMain);
   }
 
 }
+
 ```
