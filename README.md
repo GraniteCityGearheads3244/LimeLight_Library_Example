@@ -4,7 +4,7 @@ Java Files are ready. Copy the oi directory to your src/main/java folder.
 
 # Construct your Lime Light like any other object
 
-## Exsample
+## Example
 import oi.limelightvision.limelight.frc.LimeLight;
 
 private LimeLight _limelight;
