@@ -11,7 +11,7 @@ Make a new instance of the driver, and use it however you like. For example:
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import oi.limelightvision.limelight.frc.LimeLight;
-
+import oi.limelightvision.limelight.frc.ControlMode.*;
 
 public class Robot extends IterativeRobot {
 
