@@ -55,6 +55,15 @@ public class LimeLight {
        
     }
 
+    public boolean isConnected(){
+        resetPilelineLatency();
+        if(getPipelineLatency()==0.0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
     /**
      * tv   Whether the limelight has any valid targets (0 or 1)
      * @return
@@ -114,6 +123,9 @@ public class LimeLight {
         return l;
     }
 
+    private void resetPilelineLatency(){
+        m_table.getEntry("tl").setValue(0.0);
+    }
     //Setters
     
     /**
