@@ -12,8 +12,12 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
-import frc.robot.commands.MyGetLimeLightData;
-import frc.robot.commands.myLimeLightToggle_LED;
+import frc.robot.commands.MyLimeLight_get_Data;
+import frc.robot.commands.myLimeLight_Toggle_CamMode;
+import frc.robot.commands.myLimeLight_Toggle_LED;
+import frc.robot.commands.myLimeLight_Toggle_Snapshot;
+import frc.robot.commands.myLimeLight_Toggle_Stream;
+import frc.robot.commands.myLimeLight_set_Pipeline;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
@@ -58,12 +62,17 @@ public class OI {
         myJoystick = new Joystick(0);
         
         a = new JoystickButton(myJoystick, 1);
-        a.whileHeld(new MyGetLimeLightData());
+        a.whileHeld(new MyLimeLight_get_Data());
 
 
         // SmartDashboard Buttonss
-        SmartDashboard.putData("My Get LimeLight Data", new MyGetLimeLightData());
-        SmartDashboard.putData("LimeLight Toggle LED", new myLimeLightToggle_LED());
+        SmartDashboard.putData("MyLimeLight_get_Data", new MyLimeLight_get_Data());
+        SmartDashboard.putData("myLimeLight_set_Pipeline(0)", new myLimeLight_set_Pipeline(0));
+        SmartDashboard.putData("myLimeLight_set_Pipeline(1)", new myLimeLight_set_Pipeline(1));
+        SmartDashboard.putData("myLimeLight_Toggle_CamMode", new myLimeLight_Toggle_CamMode());
+        SmartDashboard.putData("myLimeLight_Toggle_LED", new myLimeLight_Toggle_LED());
+        SmartDashboard.putData("myLimeLight_Toggle_Snapshot", new myLimeLight_Toggle_Snapshot());
+        SmartDashboard.putData("myLimeLight_Toggle_Stream", new myLimeLight_Toggle_Stream());
     }
 
     public Joystick getmyJoystick() {
