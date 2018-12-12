@@ -11,7 +11,7 @@ public class ControlMode {
     public enum LedMode {
         kon(0),
         koff(1), 
-        blink(2);
+        kblink(2);
 
         private static final Map<Double, LedMode> MY_MAP = new HashMap<Double, LedMode>();
         

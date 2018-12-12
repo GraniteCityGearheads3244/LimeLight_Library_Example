@@ -8,7 +8,6 @@
 package frc.robot.commands;
 
 import edu.wpi.first.wpilibj.command.InstantCommand;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.Robot;
 
 /**
@@ -18,9 +17,19 @@ public class myLimeLight_set_Pipeline extends InstantCommand {
   /**
    * Add your docs here.
    */
-  private double m_pipeline = 0.0;
+  //private double m_pipeline = 0.0;
+  private int m_pipeline = 0;
 
-  public myLimeLight_set_Pipeline(double pipeline) {
+  /* public myLimeLight_set_Pipeline(double pipeline) {
+    super();
+    // Use requires() here to declare subsystem dependencies
+    // eg. requires(chassis);
+    requires(Robot.mylimelight);
+    m_pipeline = pipeline;
+    setRunWhenDisabled(true);
+  } */
+
+  public myLimeLight_set_Pipeline(int pipeline) {
     super();
     // Use requires() here to declare subsystem dependencies
     // eg. requires(chassis);
