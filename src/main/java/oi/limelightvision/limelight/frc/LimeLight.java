@@ -169,7 +169,7 @@ public class LimeLight {
      * 
      * @param pipeline
      */
-    public void setPipeline(Double pipeline) {
+    /* public void setPipeline(Double pipeline) {
         if(pipeline<0){
             pipeline = 0.0;
             throw new IllegalArgumentException("Pipeline can not be less than zero");
@@ -178,7 +178,7 @@ public class LimeLight {
             throw new IllegalArgumentException("Pipeline can not be greater than nine");
         }
         m_table.getEntry("pipeline").setValue(pipeline);
-    }
+    } */
 
      /**
      * pipeline Sets limelight’s current pipeline
