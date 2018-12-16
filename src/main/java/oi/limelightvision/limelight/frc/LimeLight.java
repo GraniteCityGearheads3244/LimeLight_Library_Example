@@ -56,7 +56,8 @@ public class LimeLight {
        
     }
 
-    public boolean isConnected(){
+    //This is a test
+    private boolean isConnected(){
         resetPilelineLatency();
         Timer.delay(.05);  //How to make this not hold the thread?
         if(getPipelineLatency()==0.0){
