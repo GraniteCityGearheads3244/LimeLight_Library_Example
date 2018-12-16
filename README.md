@@ -3,7 +3,7 @@
 # Java Instructions
 
 ## Manual Install
-* Copy the `oi.limelightvision.limelight.frc.LimeLight` package into your `src/main/java` folder.
+* Copy the `oi.limelightvision.limelight.frc` package into your `src/main/java` folder.
 
 ## Usage
 Make a new instance of the driver, and use it however you like. For example:
