@@ -9,9 +9,10 @@ import java.util.Map;
 public class ControlMode {
 
     public enum LedMode {
-        kon(0),
-        koff(1), 
-        kblink(2);
+        kpipeLine(0),   //0	use the LED Mode set in the current pipeline
+        kforceOff(1),   //1	force off
+        kforceBlink(2), //2	force blink
+        kforceOn(3);    //3	force on 
 
         private static final Map<Double, LedMode> MY_MAP = new HashMap<Double, LedMode>();
         
