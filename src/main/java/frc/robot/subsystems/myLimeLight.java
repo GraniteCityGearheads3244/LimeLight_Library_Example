@@ -13,7 +13,6 @@ public class myLimeLight extends Subsystem {
     public myLimeLight() {
         _limelight = new LimeLight();
         //_limelight = new LimeLight("limelight");
-        _limelight.LimeLightInit(); 
     }
 
     @Override
