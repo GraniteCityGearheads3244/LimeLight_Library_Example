@@ -28,8 +28,8 @@ public class MyLimeLight_get_Data extends InstantCommand {
     protected void initialize() {
 
         //Test all the getters
-        //boolean isconnected = Robot.mylimelight.getLimeLight().isConnected();
-        //SmartDashboard.putBoolean("isConnected", isconnected);
+        boolean isconnected = Robot.mylimelight.getLimeLight().isConnected();
+        SmartDashboard.putBoolean("isConnected", isconnected);
         boolean getIsTargetFound = Robot.mylimelight.getLimeLight().getIsTargetFound();
         SmartDashboard.putBoolean("getIsTargetFound",getIsTargetFound);
         double getdegRotationToTarget = Robot.mylimelight.getLimeLight().getdegRotationToTarget();
