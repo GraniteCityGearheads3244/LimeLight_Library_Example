@@ -27,7 +27,7 @@ public class Robot extends IterativeRobot {
 
     //Setters
     _limelight.setPipeline(1);
-    _limelight.setLEDMode(LedMode.koff);
+    _limelight.setLEDMode(LedMode.kforceOff);
     _limelight.setCamMode(CamMode.kdriver);
     _limelight.setSnapshot(Snapshot.kon);
     _limelight.setStream(StreamType.kPiPMain);
